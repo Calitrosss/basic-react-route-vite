@@ -1,3 +1,4 @@
+import "bulma/css/bulma.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
