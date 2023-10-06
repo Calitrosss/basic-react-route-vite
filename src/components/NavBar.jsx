@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const NavBar = () => {
+  // const [ToggleBurguer, setToggleBurguer] = useState(false);
+  const [NavBarMenuClass, setNavBarMenuClass] = useState("navbar-menu");
+  const [NavBarBurguerClass, setNavBarBurguerClass] = useState("navbar-burger");
+
+  const toggleNavBar = (e) => {
+    if (e.target.classList.length < 2) {
+      setNavBarMenuClass("navbar-menu is-active");
+      setNavBarBurguerClass("navbar-burger is-active");
+    } else {
+      setNavBarMenuClass("navbar-menu");
+      setNavBarBurguerClass("navbar-burger");
+    }
+  };
+
   return (
-    <nav className="navbar " role="navigation" aria-label="main navigation">
+    <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item">
           <img
@@ -14,10 +29,11 @@ const NavBar = () => {
 
         <a
           role="button"
-          className="navbar-burger"
+          className={NavBarBurguerClass}
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
+          onClick={toggleNavBar}
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -25,7 +41,7 @@ const NavBar = () => {
         </a>
       </div>
 
-      <div id="navbarBasicExample" className="navbar-menu">
+      <div id="navbarBasicExample" className={NavBarMenuClass}>
         <div className="navbar-start">
           <Link to={"/"} className="navbar-item">
             Home
