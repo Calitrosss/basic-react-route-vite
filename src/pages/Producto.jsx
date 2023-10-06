@@ -5,7 +5,7 @@ const Producto = ({ title, price, stock, images }) => {
   return (
     <div className="card" style={{ minWidth: 300, maxWidth: 300 }}>
       <header className="card-header">
-        <p className="card-header-title" style={{ height: 72 }}>
+        <p className="card-header-title is-centered" style={{ height: 72 }}>
           {title}
         </p>
       </header>
