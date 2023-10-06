@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 // eslint-disable-next-line react/prop-types
-const Producto = ({ title, price, stock, images }) => {
+const Producto = ({ id, title, price, stock, images }) => {
   const [image] = images;
 
   return (
@@ -27,9 +29,9 @@ const Producto = ({ title, price, stock, images }) => {
         </div>
       </div>
       <footer className="card-footer">
-        <a href="#" className="card-footer-item">
+        <Link to={`/productos/${id}`} className="card-footer-item">
           Ver Detalle
-        </a>
+        </Link>
       </footer>
     </div>
   );
